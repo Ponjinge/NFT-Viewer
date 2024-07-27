@@ -1,4 +1,20 @@
-# Create T3 App
+# NFT Gallery 
+
+## Description
+
+This is a simple NFT Gallery application that allows users to view NFTs from specific collections. The application is built using the T3 Stack, which includes Next.js, Prisma, Drizzle, Tailwind CSS, the App router and Vercel PostgreSQL.
+
+## TODO 
+
+- [ ] Make it depolyable
+- [ ] Scaffold the project with mock data
+- [ ] Add the ability to view specific NFTs 
+- [ ] Add Routing to the application
+- [ ] Ratelimiting
+- [ ] Error handling/managment 
+- [ ] Analytics
+
+## Create T3 App Guide 
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
