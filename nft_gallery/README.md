@@ -21,8 +21,8 @@ npm run dev
 - [x] Setup the database
 - [x] Attach the database to the UI 
 - [x] Use next/image for image optimization
-- [ ] Add the ability to view specific NFTs 
-- [ ] Add Routing to the application
+- [x] Add the ability to view specific NFTs 
+- [x] Add Routing to the application (Parallel routing)
 - [ ] Ratelimiting 
 - [ ] Error handling with Sentry
 - [ ] Analytics
