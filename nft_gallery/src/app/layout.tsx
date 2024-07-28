@@ -18,12 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`dark flex-col gap-4 font-sans`}>
+      <body className={`font-sans`}>
         <div className="grid h-screen grid-rows-[auto,1fr]">
           <TopNavigation />
-          {children}
-          {modal}
+          <main className="overflow-y-scroll">{children}</main>
         </div>
+        {modal}
+
         <div id="modal-root" />
       </body>
     </html>

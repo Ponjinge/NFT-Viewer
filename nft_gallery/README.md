@@ -23,6 +23,7 @@ npm run dev
 - [x] Use next/image for image optimization
 - [x] Add the ability to view specific NFTs 
 - [x] Add Routing to the application (Parallel routing)
+- [ ] Add ShadUI
 - [ ] Ratelimiting 
 - [ ] Error handling with Sentry
 - [ ] Analytics
