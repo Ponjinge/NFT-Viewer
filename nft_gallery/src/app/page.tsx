@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Key } from "react";
 import { db } from "~/server/db";
 
+// Make the page dynamic 
+export const dynamic = "force-dynamic";
 
 const mockUrls = [
   
