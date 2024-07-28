@@ -11,10 +11,11 @@ This is a simple NFT Gallery application that allows users to view NFTs from spe
 - [x] Tidy up the build process
 - [x] Setup the database
 - [x] Attach the database to the UI 
+- [x] Use next/image for image optimization
 - [ ] Add the ability to view specific NFTs 
 - [ ] Add Routing to the application
 - [ ] Ratelimiting
-- [ ] Error handling/managment 
+- [ ] Error handling with Sentry
 - [ ] Analytics
 
 ## Create T3 App Guide 

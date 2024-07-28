@@ -12,6 +12,10 @@ const config = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    images: {
+        remotePatterns: [{hostname: "ipfs.io"}, {hostname: "utfs.io"}, {hostname: "uploadthing-prod-sea1.s3.us-west-2.amazonaws.com"}], 
+    },
+
 
 };
 

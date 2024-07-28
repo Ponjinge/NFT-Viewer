@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Key } from "react";
 import { db } from "~/server/db";
@@ -21,7 +22,7 @@ export default async function HomePage() {
           posts.map((post) => (
             <div key={post.id} className="w-48">
               {post.name}
-              <img src={post.url} alt="image"/>
+              <Image src={post.url} alt={post.name} width={480} height={200} />
         
             </div>
           ))
