@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Key } from "react";
+import { db } from "~/server/db";
+
 
 const mockUrls = [
   
@@ -15,10 +17,23 @@ const mockImages = mockUrls.map((url, index) => ({
   url,
 }));
 
-export default function HomePage() {
+export default async function HomePage() {
+
+  // This is a server-side function, it will not be run on the client (console.log will not show up in the browser)
+  const posts = await db.query.posts.findMany();
+  
+
   return (
     <main className="">
-      <div className="flex flex-wrap gap-4">{
+      <div className="flex flex-wrap gap-4">
+        {
+          posts.map((post) => (
+            <div key={post.id} className="w-48">
+              {post.name}
+            </div>
+          ))
+        }
+        {
         mockImages.map((image: { id: Key | null | undefined; url: string | undefined; }) => (
           <div key={image.id} className="w-48">
             <img src={image.url} alt="image"/>
