@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { TopNavigation } from "./_components/topnavigation";
+import { ThemeProvider } from "~/app/_components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -19,13 +20,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans`}>
-        <div className="grid h-screen grid-rows-[auto,1fr]">
-          <TopNavigation />
-          <main className="overflow-y-scroll">{children}</main>
-        </div>
-        {modal}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
+          disableTransitionOnChange={true}
+        >
+          <div className="grid h-screen grid-rows-[auto,1fr]">
+            <TopNavigation />
+            <main className="overflow-y-scroll">{children}</main>
+          </div>
+          {modal}
 
-        <div id="modal-root" />
+          <div id="modal-root" />
+        </ThemeProvider>
       </body>
     </html>
   );

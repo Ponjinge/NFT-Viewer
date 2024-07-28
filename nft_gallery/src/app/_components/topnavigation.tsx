@@ -1,3 +1,4 @@
+import { ModeToggle } from "./theme-toggle";
 
 export function TopNavigation() {
     return (
@@ -11,7 +12,11 @@ export function TopNavigation() {
             <li>
               <a href="/about">About</a>
             </li>
+            
+              
+            
           </ul>
+          <ModeToggle/>
         </nav>
       </header>
     );
