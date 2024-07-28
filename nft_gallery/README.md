@@ -9,6 +9,8 @@ This is a simple NFT Gallery application that allows users to view NFTs from spe
 - [x] Make it depolyable
 - [x] Scaffold the project with mock data
 - [x] Tidy up the build process
+- [x] Setup the database
+- [ ] Attach the database to the UI 
 - [ ] Add the ability to view specific NFTs 
 - [ ] Add Routing to the application
 - [ ] Ratelimiting
