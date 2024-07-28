@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { db } from "~/server/db";
 
+import {
+  Card,
+  CardContent,
+  CardFooter,
+
+} from "../components/ui/card";
+
 // Make the page dynamic
 export const dynamic = "force-dynamic";
 
@@ -17,10 +24,23 @@ export default async function HomePage() {
       <div className="flex flex-wrap justify-center gap-4">
         {posts.map((post) => (
           <div key={post.id} className="w-48">
-            {post.name}
-            <Link href={`/photos/${post.id}`}>
-              <Image src={post.url} alt={post.name} width={480} height={200} />
-            </Link>
+            <Card className="w-auto p-1">
+              <CardContent>
+                <Link href={`/photos/${post.id}`}>
+                  <Image
+                    src={post.url}
+                    alt={post.name}
+                    width={480}
+                    height={200}
+                  />
+                </Link>
+                <p className="text-xs"> #{post.id}</p>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                {" "}
+                {post.name}
+              </CardFooter>
+            </Card>
           </div>
         ))}
       </div>
