@@ -1,6 +1,5 @@
 import "~/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { TopNavigation } from "./_components/topnavigation";
 
@@ -10,16 +9,23 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-
-
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className="font-sans flex-col gap-4">
-        <TopNavigation />
-        {children}</body>
+      <body className={`dark flex-col gap-4 font-sans`}>
+        <div className="grid h-screen grid-rows-[auto,1fr]">
+          <TopNavigation />
+          {children}
+          {modal}
+        </div>
+        <div id="modal-root" />
+      </body>
     </html>
   );
 }

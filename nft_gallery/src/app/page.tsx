@@ -17,13 +17,14 @@ export default async function HomePage() {
 
   return (
     <main className="">
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 justify-center">
         {
           posts.map((post) => (
             <div key={post.id} className="w-48">
               {post.name}
-              <Image src={post.url} alt={post.name} width={480} height={200} />
-        
+              <Link href={`/photos/${post.id}`}>
+                  <Image src={post.url} alt={post.name} width={480} height={200} />
+              </Link>
             </div>
           ))
         }
