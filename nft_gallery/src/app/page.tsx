@@ -2,12 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { db } from "~/server/db";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-
-} from "../components/ui/card";
+import { Card, CardContent, CardFooter } from "../components/ui/card";
 
 // Make the page dynamic
 export const dynamic = "force-dynamic";
@@ -21,26 +16,27 @@ export default async function HomePage() {
 
   return (
     <main className="">
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-4 mt-1">
         {posts.map((post) => (
           <div key={post.id} className="w-48">
-            <Card className="w-auto p-1">
-              <CardContent>
-                <Link href={`/photos/${post.id}`}>
+            <Link href={`/photos/${post.id}`}>
+            <Card className="w-auto p-1 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg hover:border-blue-500">
+                <CardContent>
                   <Image
                     src={post.url}
                     alt={post.name}
                     width={480}
                     height={200}
                   />
-                </Link>
-                <p className="text-xs"> #{post.id}</p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                {" "}
-                {post.name}
-              </CardFooter>
-            </Card>
+
+                  <p className="text-xs"> #{post.id}</p>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  {" "}
+                  {post.name}
+                </CardFooter>
+              </Card>
+            </Link>
           </div>
         ))}
       </div>
