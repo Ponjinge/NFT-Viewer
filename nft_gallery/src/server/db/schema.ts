@@ -2,6 +2,7 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
+import { year } from "drizzle-orm/mysql-core";
 import {
   index,
   pgTableCreator,
@@ -24,6 +25,10 @@ export const posts = createTable(
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 256 }).notNull(),
     url: varchar("url", { length: 1024 }).notNull(),
+    description: varchar("description", { length: 1024 }).notNull(),
+    artist: varchar("artist", { length: 256 }).notNull(),
+    year: varchar("year").notNull(),
+    mediatype: varchar("mediatype", { length: 256 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
