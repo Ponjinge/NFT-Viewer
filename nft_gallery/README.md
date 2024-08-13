@@ -28,7 +28,7 @@ npm run dev
 - [ ] Error handling with Sentry
 - [ ] Analytics
 
-- [ ] Replace mock data with real data
+- [x] Replace mock data with real data
 
 
 ## Documentation

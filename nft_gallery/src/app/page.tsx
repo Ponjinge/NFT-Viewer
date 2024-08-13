@@ -12,10 +12,10 @@ function convertIpfsUrl(ipfsUrl) {
 
 export default async function HomePage() {
   const baseLink = "https://ipfs.io/ipfs/bafybeibc5sgo2plmjkq2tzmhrn54bk3crhnc23zd2msg4ea7a4pxrkgfna/";
-
+  //const baseLink = "https://ipfs.io/ipfs/QmaxEUs9LWYzJRWVwCe5G4m4DZzRoA7Ezvs7QkGmTR17fM/";
   const allMetadata = [];
 
-  for (let id = 1; id <= 100; id++) {
+  for (let id = 1; id <= 80; id++) {
     const link = `${baseLink}${id}`;
     try {
       const response = await fetch(link);

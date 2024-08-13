@@ -10,9 +10,12 @@ function convertIpfsUrl(ipfsUrl) {
 
 export default async function FullPageImageView(props: { id:  number }) {
   let metadata;
+  const baseLink = "https://ipfs.io/ipfs/bafybeibc5sgo2plmjkq2tzmhrn54bk3crhnc23zd2msg4ea7a4pxrkgfna/";
+  //const baseLink = "https://ipfs.io/ipfs/QmaxEUs9LWYzJRWVwCe5G4m4DZzRoA7Ezvs7QkGmTR17fM/";
   
   try {
-    const response = await fetch(`https://ipfs.io/ipfs/bafybeibc5sgo2plmjkq2tzmhrn54bk3crhnc23zd2msg4ea7a4pxrkgfna/${props.id}`);
+    const response = await fetch(`${baseLink}${props.id}`);
+
     if (!response.ok) {
       throw new Error("Failed to fetch image data");
     }
@@ -35,10 +38,15 @@ export default async function FullPageImageView(props: { id:  number }) {
           />
           <div className="flex h-full flex-shrink-0 flex-col border-l p-4">
             <div className="border-b p-2 text-center text-xl">{metadata.name}</div>
-            <div className="p-2">
-              <div>Id:</div>
-              <div>{metadata.id}</div>
+            
+            {metadata.attributes.map((attr, index) => (
+              <div key={index}  className="p-2">
+              <div>{attr.trait_type} : </div>
+              <div>{attr.value}</div>
             </div>
+            
+            ))}
+            
            
           </div>
         </div>
