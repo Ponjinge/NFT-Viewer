@@ -1,2 +1,2 @@
-# Toulouse-Museum-NFTs
-Website and smart contracts for the NFT projects
+# NFT Viewer
+Website and smart contracts for NFT projects
